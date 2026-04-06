@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@assistant-ui/react": "^0.10.20",
-    "@readyloop/sdk": "https://readyloop-sdk-cdn.pages.dev/v0.1.0/readyloop-sdk-0.1.0.tgz",
+    "@readyloop/sdk": "https://cdn.readyloop.ai/v0.1.1/readyloop-sdk-0.1.1.tgz",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^10.1.0",
