@@ -6,8 +6,9 @@ import { ReadyLoopProvider } from '@readyloop/sdk/react';
 import { API_URL, APP_KEY } from './config';
 import { App } from './App';
 
-// Import SDK styles
+// SDK base styles first, then our theme overrides
 import '@readyloop/sdk/styles.css';
+import './theme.css';
 
 function Root() {
   const [client, setClient] = useState<ReadyLoopClient | null>(null);
