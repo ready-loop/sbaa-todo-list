@@ -1,0 +1,21 @@
+/*
+ * Todo List theme -- override @readyloop/sdk CSS custom properties.
+ */
+:root {
+  --rl-bg: #0f1a14;
+  --rl-bg-secondary: #162119;
+  --rl-bg-muted: #162119;
+  --rl-fg: #f1f5f3;
+  --rl-fg-muted: #94b8a3;
+  --rl-fg-subtle: #64876f;
+  --rl-border: #2d4a36;
+  --rl-border-strong: #3d6148;
+  --rl-primary: #34d399;
+  --rl-primary-fg: #0f1a14;
+  --rl-accent: #162119;
+  --rl-accent-fg: #f1f5f3;
+  --rl-danger: #ef4444;
+  --rl-shadow-card: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --rl-radius: 0.5rem;
+  --rl-radius-lg: 0.75rem;
+}

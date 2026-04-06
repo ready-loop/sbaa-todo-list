@@ -1,0 +1,204 @@
+/* Login screen */
+.sbaa-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.sbaa-login__card {
+  text-align: center;
+  max-width: 360px;
+  width: 100%;
+}
+
+.sbaa-login__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--rl-fg);
+}
+
+.sbaa-login__tagline {
+  font-size: 1rem;
+  color: var(--rl-fg-muted);
+  margin: 0 0 32px;
+}
+
+.sbaa-login__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid var(--rl-border-strong);
+  border-radius: var(--rl-radius);
+  background: var(--rl-bg-secondary);
+  color: var(--rl-fg);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.sbaa-login__button:hover {
+  background: var(--rl-border);
+}
+
+/* App shell */
+.sbaa-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.sbaa-shell__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--rl-border);
+  background: var(--rl-bg-secondary);
+}
+
+.sbaa-shell__logo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--rl-fg);
+}
+
+.sbaa-shell__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sbaa-shell__email {
+  font-size: 0.85rem;
+  color: var(--rl-fg-muted);
+}
+
+.sbaa-shell__btn {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid var(--rl-border-strong);
+  border-radius: var(--rl-radius);
+  background: var(--rl-bg);
+  color: var(--rl-fg);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.sbaa-shell__btn:hover {
+  background: var(--rl-border);
+}
+
+.sbaa-shell__btn--subtle {
+  border-color: transparent;
+  background: transparent;
+  color: var(--rl-fg-muted);
+}
+
+.sbaa-shell__btn--subtle:hover {
+  color: var(--rl-fg);
+  background: var(--rl-bg-secondary);
+}
+
+.sbaa-shell__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Subscribe page */
+.sbaa-subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 16px;
+  min-height: 100vh;
+}
+
+.sbaa-subscribe__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: var(--rl-fg);
+}
+
+.sbaa-subscribe__subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0 0 32px;
+  color: var(--rl-fg-muted);
+}
+
+.sbaa-subscribe__plans {
+  display: flex;
+  gap: 16px;
+  max-width: 960px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+@media (max-width: 640px) {
+  .sbaa-subscribe__plans {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.sbaa-subscribe__card {
+  border-radius: 12px;
+  padding: 34px 36px 28px;
+  width: 312px;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+.sbaa-subscribe__plan-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.sbaa-subscribe__plan-desc {
+  font-size: 14px;
+  color: var(--rl-fg-muted);
+  margin-bottom: 24px;
+}
+
+.sbaa-subscribe__price {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 22px;
+}
+
+.sbaa-subscribe__price-amount {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.sbaa-subscribe__price-interval {
+  font-size: 13px;
+  color: var(--rl-fg-muted);
+}
+
+.sbaa-subscribe__cta {
+  width: 100%;
+  height: 44px;
+  background: var(--rl-primary);
+  color: var(--rl-primary-fg);
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+
+.sbaa-subscribe__cta:hover {
+  filter: brightness(0.92);
+}
