@@ -1,21 +1,129 @@
 /*
- * Todo List theme -- override @readyloop/sdk CSS custom properties.
+ * Todo List theme -- Material Design 3 inspired light palette
+ * from Google Stitch design system.
  */
 :root {
-  --rl-bg: #0f1a14;
-  --rl-bg-secondary: #162119;
-  --rl-bg-muted: #162119;
-  --rl-fg: #f1f5f3;
-  --rl-fg-muted: #94b8a3;
-  --rl-fg-subtle: #64876f;
-  --rl-border: #2d4a36;
-  --rl-border-strong: #3d6148;
-  --rl-primary: #34d399;
-  --rl-primary-fg: #0f1a14;
-  --rl-accent: #162119;
-  --rl-accent-fg: #f1f5f3;
-  --rl-danger: #ef4444;
-  --rl-shadow-card: 0 1px 3px rgba(0, 0, 0, 0.5);
-  --rl-radius: 0.5rem;
-  --rl-radius-lg: 0.75rem;
+  /* Surface hierarchy (light, layered lavender) */
+  --rl-bg: #fbf8ff;
+  --rl-bg-secondary: #f3f2ff;
+  --rl-bg-muted: #ededfa;
+
+  /* Text hierarchy */
+  --rl-fg: #191b24;
+  --rl-fg-muted: #434656;
+  --rl-fg-subtle: #747688;
+
+  /* Borders */
+  --rl-border: #c4c5d9;
+  --rl-border-strong: #747688;
+
+  /* Primary action (vivid blue) */
+  --rl-primary: #0040e0;
+  --rl-primary-fg: #ffffff;
+
+  /* Accent surfaces */
+  --rl-accent: #e7e7f4;
+  --rl-accent-fg: #191b24;
+
+  /* Status */
+  --rl-danger: #ba1a1a;
+
+  /* Elevation & shape */
+  --rl-shadow-card: 0 1px 4px rgba(25, 27, 36, 0.06);
+  --rl-radius: 0.75rem;
+  --rl-radius-lg: 1.25rem;
+
+  /* Extended tokens for the SBAA shell */
+  --rl-surface-container: #ededfa;
+  --rl-surface-container-low: #f3f2ff;
+  --rl-surface-container-high: #e7e7f4;
+  --rl-outline-variant: #c4c5d9;
+  --rl-primary-fixed: #dde1ff;
+}
+
+/* Override SDK chat styles for the light M3 look */
+
+/* Rounder message bubbles */
+.rl-msg__bubble {
+  border-radius: 1.25rem;
+}
+.rl-msg__bubble--user {
+  border-bottom-right-radius: 0.25rem;
+}
+.rl-msg__bubble--assistant {
+  border-bottom-left-radius: 0.25rem;
+}
+
+/* User bubble: subtle surface instead of bold primary */
+.rl-msg__bubble--user {
+  background-color: var(--rl-surface-container-low);
+  color: var(--rl-fg);
+}
+
+/* Pill-shaped composer with glass effect */
+.rl-composer__input-row {
+  border-radius: 9999px;
+  background: rgba(251, 248, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border-color: rgba(196, 197, 217, 0.25);
+  box-shadow: 0 12px 40px rgba(25, 27, 36, 0.06);
+}
+
+.rl-composer__input-row:focus-within {
+  border-color: rgba(196, 197, 217, 0.5);
+}
+
+/* Rounded send button */
+.rl-composer__send-button {
+  border-radius: 9999px;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #0040e0, #2e5bff);
+  box-shadow: 0 2px 8px rgba(0, 64, 224, 0.25);
+}
+
+.rl-composer__send-button:disabled {
+  background: var(--rl-surface-container-high);
+  box-shadow: none;
+}
+
+.rl-composer__attach-button {
+  border-radius: 9999px;
+  background-color: var(--rl-surface-container-high);
+  color: var(--rl-fg-muted);
+}
+
+.rl-composer__attach-button:hover {
+  background-color: var(--rl-surface-container);
+  color: var(--rl-fg);
+}
+
+/* Card overrides */
+.rl-card {
+  border-radius: var(--rl-radius-lg);
+  border-color: rgba(196, 197, 217, 0.15);
+}
+
+/* Empty state typography */
+.rl-thread__empty-title {
+  font-family: 'Manrope', sans-serif;
+  text-transform: none;
+  letter-spacing: -0.02em;
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+
+.rl-thread__empty-subtitle {
+  font-size: 0.9375rem;
+  opacity: 0.7;
+}
+
+/* File chips */
+.rl-composer__file-chip {
+  border-radius: 9999px;
+}
+
+/* Attach menu */
+.rl-composer__attach-menu {
+  border-radius: var(--rl-radius);
 }

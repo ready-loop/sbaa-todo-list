@@ -1,9 +1,8 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import type { ReadyLoopClient } from '@readyloop/sdk';
 import { ReadyLoopChat } from '@readyloop/sdk/react';
 
 import { AppShell } from '@/components/AppShell';
-import { APP_NAME } from '@/config';
 
 interface AuthState {
   userEmail: string | null;
@@ -15,22 +14,46 @@ interface ChatPageProps {
   auth: AuthState;
 }
 
-function EmptyState() {
+function getGreeting(): string {
+  const hour = new Date().getHours();
+  if (hour < 12) return 'Good Morning';
+  if (hour < 17) return 'Good Afternoon';
+  return 'Good Evening';
+}
+
+function formatDate(): string {
+  return new Date().toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+function EmptyState({ userEmail }: { userEmail: string | null }) {
+  const firstName = userEmail?.split('@')[0] ?? '';
   return (
     <div className="rl-thread__empty">
-      <div className="rl-thread__empty-title">{APP_NAME}</div>
-      <div className="rl-thread__empty-subtitle">Add tasks, check them off, stay organized</div>
+      <div className="rl-thread__empty-title">
+        {getGreeting()}{firstName ? `, ${firstName}` : ''}.
+      </div>
+      <div className="rl-thread__empty-subtitle">
+        {formatDate()} — What would you like to get done?
+      </div>
     </div>
   );
 }
 
 export function ChatPage({ client, auth }: ChatPageProps) {
-  // Changing the key forces ReadyLoopChat to remount with a new conversation
   const [chatKey, setChatKey] = useState(0);
 
   const handleNewConversation = useCallback(() => {
     setChatKey((k) => k + 1);
   }, []);
+
+  const emptyState = useMemo(
+    () => <EmptyState userEmail={auth.userEmail} />,
+    [auth.userEmail],
+  );
 
   return (
     <AppShell
@@ -41,8 +64,8 @@ export function ChatPage({ client, auth }: ChatPageProps) {
       <ReadyLoopChat
         key={chatKey}
         client={client}
-        slots={{ EmptyState: <EmptyState /> }}
-        composerPlaceholder="Add a task, check your list, mark items done..."
+        slots={{ EmptyState: emptyState }}
+        composerPlaceholder="Message assistant... Try 'Add buy groceries to my list'"
       />
     </AppShell>
   );

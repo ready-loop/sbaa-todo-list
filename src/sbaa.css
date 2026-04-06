@@ -5,6 +5,7 @@
   justify-content: center;
   min-height: 100vh;
   padding: 16px;
+  background: var(--rl-bg);
 }
 
 .sbaa-login__card {
@@ -14,35 +15,40 @@
 }
 
 .sbaa-login__title {
-  font-size: 2rem;
-  font-weight: 700;
+  font-family: 'Manrope', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
   margin: 0 0 8px;
   color: var(--rl-fg);
+  letter-spacing: -0.02em;
 }
 
 .sbaa-login__tagline {
   font-size: 1rem;
   color: var(--rl-fg-muted);
-  margin: 0 0 32px;
+  margin: 0 0 40px;
+  opacity: 0.8;
 }
 
 .sbaa-login__button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 24px;
+  padding: 14px 28px;
   font-size: 15px;
   font-weight: 500;
-  border: 1px solid var(--rl-border-strong);
-  border-radius: var(--rl-radius);
-  background: var(--rl-bg-secondary);
+  border: 1px solid var(--rl-outline-variant, var(--rl-border));
+  border-radius: 9999px;
+  background: var(--rl-bg);
   color: var(--rl-fg);
   cursor: pointer;
-  transition: background 0.15s;
+  transition: all 0.2s;
+  box-shadow: 0 1px 3px rgba(25, 27, 36, 0.04);
 }
 
 .sbaa-login__button:hover {
-  background: var(--rl-border);
+  background: var(--rl-surface-container-low, var(--rl-bg-secondary));
+  box-shadow: 0 2px 8px rgba(25, 27, 36, 0.08);
 }
 
 /* App shell */
@@ -56,15 +62,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 20px;
-  border-bottom: 1px solid var(--rl-border);
-  background: var(--rl-bg-secondary);
+  padding: 0 24px;
+  height: 64px;
+  border-bottom: 1px solid rgba(196, 197, 217, 0.2);
+  background: var(--rl-bg);
 }
 
 .sbaa-shell__logo {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 800;
   color: var(--rl-fg);
+  letter-spacing: -0.01em;
 }
 
 .sbaa-shell__actions {
@@ -79,19 +88,19 @@
 }
 
 .sbaa-shell__btn {
-  padding: 6px 14px;
+  padding: 8px 18px;
   font-size: 0.85rem;
   font-weight: 500;
-  border: 1px solid var(--rl-border-strong);
-  border-radius: var(--rl-radius);
+  border: 1px solid var(--rl-outline-variant, var(--rl-border));
+  border-radius: 9999px;
   background: var(--rl-bg);
   color: var(--rl-fg);
   cursor: pointer;
-  transition: background 0.15s;
+  transition: all 0.15s;
 }
 
 .sbaa-shell__btn:hover {
-  background: var(--rl-border);
+  background: var(--rl-surface-container-low, var(--rl-bg-secondary));
 }
 
 .sbaa-shell__btn--subtle {
@@ -102,7 +111,7 @@
 
 .sbaa-shell__btn--subtle:hover {
   color: var(--rl-fg);
-  background: var(--rl-bg-secondary);
+  background: var(--rl-surface-container-low, var(--rl-bg-secondary));
 }
 
 .sbaa-shell__content {
@@ -121,14 +130,16 @@
 }
 
 .sbaa-subscribe__title {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
   margin: 0 0 8px;
   color: var(--rl-fg);
+  letter-spacing: -0.02em;
 }
 
 .sbaa-subscribe__subtitle {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 400;
   margin: 0 0 32px;
   color: var(--rl-fg-muted);
@@ -150,16 +161,20 @@
 }
 
 .sbaa-subscribe__card {
-  border-radius: 12px;
+  border-radius: var(--rl-radius-lg, 12px);
   padding: 34px 36px 28px;
   width: 312px;
   max-width: 100%;
   flex-shrink: 0;
+  background: var(--rl-bg);
+  border: 1px solid rgba(196, 197, 217, 0.2);
+  box-shadow: 0 1px 4px rgba(25, 27, 36, 0.04);
 }
 
 .sbaa-subscribe__plan-name {
+  font-family: 'Manrope', sans-serif;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 12px;
 }
 
@@ -177,8 +192,9 @@
 }
 
 .sbaa-subscribe__price-amount {
+  font-family: 'Manrope', sans-serif;
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .sbaa-subscribe__price-interval {
@@ -188,17 +204,23 @@
 
 .sbaa-subscribe__cta {
   width: 100%;
-  height: 44px;
-  background: var(--rl-primary);
+  height: 48px;
+  background: linear-gradient(135deg, #0040e0, #2e5bff);
   color: var(--rl-primary-fg);
   border: none;
-  border-radius: 6px;
+  border-radius: 9999px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: filter 0.15s;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 64, 224, 0.2);
 }
 
 .sbaa-subscribe__cta:hover {
-  filter: brightness(0.92);
+  box-shadow: 0 4px 16px rgba(0, 64, 224, 0.3);
+  transform: translateY(-1px);
+}
+
+.sbaa-subscribe__cta:active {
+  transform: scale(0.98);
 }
