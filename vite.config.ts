@@ -16,7 +16,7 @@ function spaFallback(): Plugin {
 
 export default defineConfig({
   plugins: [react(), spaFallback()],
-  base: './',
+  base: '/',
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
